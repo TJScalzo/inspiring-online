@@ -17,3 +17,15 @@ taxonomies:
 outputFormats:
   rss:
     baseName: feed
+
+related:
+  threshold: 75
+  includeNewer: true
+  toLower: false
+  indices:
+  - name: tags
+    weight: 100
+  - name: date
+    weight: 25
+  - name: category
+    weight: 10

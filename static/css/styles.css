@@ -93,6 +93,30 @@ article {
   color: #888;
 }
 
+.related-posts {
+  max-width: 440px;
+  margin: auto;
+  padding: 25px 30px 40px;
+}
+
+.related-posts ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+.related-posts ul > li {
+  margin-top: .5em;
+}
+
+.related-posts ul > li:before {
+  display: inline-block;
+  content: "-";
+  font-weight: bolder;
+  width: 1em;
+  margin-left: -1em;
+}
+
 article h1 {
   font-size: 2.6rem;
   line-height: 2.8rem;

@@ -23,11 +23,23 @@
       <article>
         <div class="inner-wrapper">
           <h1>{{ .Title }}</h1>
-           <div class="category"><a class="{{ anchorize .Params.Category }}" href="{{ anchorize .Params.Category | absURL }}">{{ .Params.Category }}</a></div>
+          <div class="category"><a class="{{ anchorize .Params.Category }}" href="{{ anchorize .Params.Category | absURL }}">{{ .Params.Category }}</a></div>
           {{ .Content }}
         </div>
         {{ if .Truncated }}
           <canvas class="canvas-effect" width="50vw" height="50vw" data-category="{{ anchorize .Params.Category }}"></canvas>
+        {{ end }}
+        <div class="zigzag slide-up"></div>
+        {{ $related := .Site.RegularPages.Related . | first 3 }}
+        {{ with $related }}
+        <div class="related-posts">
+          <h2>Related Posts</h2>
+          <ul>
+            {{ range . }}
+              <li><a class="{{ anchorize .Params.Category }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
         {{ end }}
         <div class="zigzag slide-up"></div>
         <div class="other-links">
